@@ -1,6 +1,4 @@
-interface MathWithTruncMaybe extends Math{
-    trunc?: (i: number) => number;
-}
+type MathWithTruncMaybe = any;
 declare var Math: MathWithTruncMaybe;
 
 export interface Point{

@@ -73,9 +73,6 @@ module.exports = {
             }
         ]
     },
-    node: {
-        Buffer: false,
-    },
     plugins: [
         new webpack.LoaderOptionsPlugin({
           debug: true

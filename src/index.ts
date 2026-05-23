@@ -136,7 +136,7 @@ class Pxl8 {
         });
 
         palView.on({
-            primaryColorSelected: () => void(console.log('color')) || this.eventManager.raise('primaryColorSelected'),
+            primaryColorSelected: () => { console.log('color'); this.eventManager.raise('primaryColorSelected'); },
             secondaryColorSelected: () => this.eventManager.raise('secondaryColorSelected'),
             paletteModified: () => this.eventManager.raise('paletteModified'),
             colorEditRequest: (index) => this.editPalEntry(index),
@@ -251,7 +251,7 @@ class Pxl8 {
             rgbPicker.intitialize(cue.rMax, cue.gMax, cue.bMax);
             this.colorPicker = rgbPicker;
         } else {
-            throw Error('Color picker not implemented for cue type: ' + cue!.type);
+            throw Error('Color picker not implemented for cue type: ' + (cue as any).type);
         }
     }
 

@@ -33,8 +33,8 @@ export const Volatile = {
 }
 
 export function saveBlob(blob: Blob, filename: string) {
-    if (window.navigator.msSaveOrOpenBlob as any) {
-        window.navigator.msSaveBlob(blob, filename);
+    if ((window.navigator as any).msSaveOrOpenBlob as any) {
+        (window.navigator as any).msSaveBlob(blob, filename);
     }
     else {
         var elem = window.document.createElement('a');

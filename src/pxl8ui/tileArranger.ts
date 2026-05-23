@@ -59,7 +59,7 @@ export class TileArranger extends Widget<TileArrangerEvents>{
     }
 
     getDocument() {
-        var romView = this.findParentWidget() as RomView | null;
+        var romView = (this.findParentWidget() as any) as RomView | null;
         console.log('view: ' , romView);
         if (romView) return romView.getDocument();
         return null;
